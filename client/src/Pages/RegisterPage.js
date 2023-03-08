@@ -4,10 +4,24 @@ import "./main.css";
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
+
+  async function register(ev) {
+    ev.preventDefault();
+    const respone = await fetch("http://localhost:4000/register", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (respone.status === 200) {
+      console.log("200OK, Reason: 21e3863faa69f5b8a2e9cd8ab22e85d0")
+    } else {
+      alert("Registrasi Gagal.");
+    }
+  }
+
   return (
     <main>
-      <form className="register">
+      <form className="register" onSubmit={register}>
         <p>Register Page</p>
         <input
           type="text"

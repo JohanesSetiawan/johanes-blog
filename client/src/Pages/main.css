@@ -25,10 +25,10 @@ input {
 }
 
 /* berikan <p> berupa font-weight: bold dan font-size: 23px */
-p {
+/* p {
   font-weight: bold;
   font-size: 23px;
-}
+} */
 
 /* styling botton, dan tambahkan hover */
 button {
